@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+  <title>爱情岛-恋爱综艺_真人秀_情感观察节目推荐</title>
+  <meta name="description" content="爱情岛专题页汇聚恋爱综艺、真人秀与情感观察节目推荐，提供深度解析、热门榜单、最新动态、用户评论和常见问题，帮助观众快速找到值得追的爱情岛类节目。">
+  <meta name="keywords" content="爱情岛,恋爱综艺,真人秀,情感观察,爱情岛推荐">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff6b9d'/%3E%3Ctext x='50' y='67' font-size='48' text-anchor='middle' fill='white' font-family='Arial'%3E爱%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --magenta: #d6336c;
+      --rose: #f06595;
+      --blush: #fff0f6;
+      --plum: #4a1a2e;
+      --ink: #1f1a1e;
+      --muted: #6b5b63;
+      --card: #ffffff;
+      --shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08), 0 4px 12px -4px rgba(0, 0, 0, 0.02);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --max-width: 1200px;
+      --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font);
+      background: #fbf7f9;
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* 顶部导航 */
+    .top-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #f0e4ea;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--plum);
+    }
+    .logo-badge {
+      background: var(--magenta);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: 0 6px 12px -6px rgba(214, 51, 108, 0.4);
+    }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .nav-links a:hover {
+      background: var(--blush);
+      color: var(--magenta);
+    }
+    /* 首屏 Banner */
+    .hero {
+      background: linear-gradient(145deg, #fff5f9 0%, #ffe7f0 100%);
+      border-radius: 0 0 48px 48px;
+      margin-bottom: 32px;
+      padding: 48px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(240, 101, 149, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-text {
+      flex: 1 1 400px;
+    }
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--plum);
+      margin-bottom: 16px;
+    }
+    .hero-text h1 span {
+      background: linear-gradient(120deg, var(--magenta) 0%, var(--rose) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 1.15rem;
+      color: #5e3d4e;
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+    .search-box {
+      display: flex;
+      background: white;
+      border-radius: 60px;
+      padding: 6px 6px 6px 22px;
+      box-shadow: 0 10px 24px -10px rgba(214, 51, 108, 0.2);
+      max-width: 460px;
+      border: 1px solid #ffd9e6;
+      margin-bottom: 24px;
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 1rem;
+      background: transparent;
+      color: var(--ink);
+    }
+    .search-box input::placeholder {
+      color: #b8a0ab;
+    }
+    .search-box button {
+      background: var(--magenta);
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: default;
+      box-shadow: 0 6px 14px -4px rgba(214, 51, 108, 0.4);
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-tags a {
+      background: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #6b3d4f;
+      border: 1px solid #f0dae4;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+    .hero-tags a:hover {
+      background: var(--magenta);
+      color: white;
+      border-color: var(--magenta);
+    }
+    .hero-visual {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .island-graphic {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, #ffb8d1, #ff8bb3);
+      border-radius: 60% 40% 50% 50% / 45% 55% 45% 55%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 4rem;
+      font-weight: 800;
+      box-shadow: 0 30px 40px -20px rgba(214, 51, 108, 0.5);
+      transform: rotate(6deg);
+      transition: transform 0.3s;
+    }
+    .island-graphic span {
+      transform: rotate(-6deg);
+      text-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    /* 通用区块 */
+    .section {
+      padding: 48px 0;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .section-header h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--plum);
+      position: relative;
+      padding-left: 16px;
+    }
+    .section-header h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 6px;
+      background: var(--magenta);
+      border-radius: 10px;
+    }
+    .section-header .more-link {
+      color: var(--magenta);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .rec-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px 20px 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #f5eaf0;
+    }
+    .rec-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 36px -16px rgba(214, 51, 108, 0.2);
+    }
+    .rec-card .card-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 40px;
+      background: var(--blush);
+      color: var(--magenta);
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+    .rec-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--plum);
+    }
+    .rec-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #9b8a92;
+      border-top: 1px solid #f2e6ec;
+      padding-top: 14px;
+      margin-top: auto;
+    }
+    .card-meta span:first-child {
+      color: var(--magenta);
+      font-weight: 600;
+    }
+    /* 更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .update-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid #f5eaf0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      transition: 0.2s;
+    }
+    .update-item:hover {
+      border-color: #ffc2d6;
+    }
+    .update-item .time-badge {
+      background: var(--blush);
+      color: var(--magenta);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 40px;
+      white-space: nowrap;
+    }
+    .update-item .update-title {
+      font-weight: 700;
+      color: var(--plum);
+      min-width: 160px;
+    }
+    .update-item .update-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .cat-item {
+      background: white;
+      border-radius: 40px;
+      padding: 14px 18px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--plum);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #f2e6ec;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .cat-item:hover {
+      background: var(--magenta);
+      color: white;
+      border-color: var(--magenta);
+      transform: translateY(-2px);
+    }
+    /* 深度解析 */
+    .deep-dive {
+      background: white;
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      box-shadow: var(--shadow);
+      border: 1px solid #f5eaf0;
+    }
+    .deep-dive h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--plum);
+      margin-bottom: 24px;
+    }
+    .deep-dive h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--magenta);
+      margin: 28px 0 12px;
+    }
+    .deep-dive p {
+      margin-bottom: 18px;
+      color: #3e2e36;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    /* FAQ 手风琴 */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      border: 1px solid #f2e6ec;
+    }
+    .faq-q {
+      font-weight: 700;
+      color: var(--plum);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 10px;
+    }
+    .faq-q::before {
+      content: 'Q';
+      color: var(--magenta);
+      font-weight: 800;
+    }
+    .faq-a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding-left: 24px;
+    }
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .comment-card {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      border: 1px solid #f5eaf0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffb8d1, #ff8bb3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .nickname {
+      font-weight: 600;
+      color: var(--plum);
+      font-size: 0.95rem;
+    }
+    .comment-date {
+      font-size: 0.75rem;
+      color: #b8a0ab;
+      margin-left: auto;
+    }
+    .comment-text {
+      font-size: 0.92rem;
+      color: #4e3c44;
+      line-height: 1.7;
+    }
+    /* 资讯 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .news-card {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      border: 1px solid #f5eaf0;
+      transition: 0.2s;
+    }
+    .news-card:hover {
+      border-color: #ffc2d6;
+    }
+    .news-card .news-date {
+      font-size: 0.75rem;
+      color: var(--magenta);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .news-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--plum);
+      margin-bottom: 8px;
+    }
+    .news-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    /* 页脚 */
+    .footer {
+      background: var(--plum);
+      color: #d9c6d0;
+      padding: 48px 0 32px;
+      margin-top: 48px;
+      border-radius: 40px 40px 0 0;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-brand {
+      max-width: 260px;
+    }
+    .footer-brand .logo {
+      color: white;
+      margin-bottom: 12px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #b8a0ab;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: white;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: #b8a0ab;
+      margin-bottom: 8px;
+      transition: 0.2s;
+    }
+    .footer-col a:hover {
+      color: white;
+    }
+    .footer-bottom {
+      border-top: 1px solid #5e3d4e;
+      margin-top: 40px;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9b8a92;
+    }
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+      .hero {
+        padding: 32px 0 40px;
+        border-radius: 0 0 28px 28px;
+      }
+      .nav-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 0;
+        gap: 10px;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      .section {
+        padding: 32px 0;
+      }
+      .deep-dive {
+        padding: 24px 20px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        gap: 28px;
+      }
+      .island-graphic {
+        width: 200px;
+        height: 200px;
+        font-size: 3rem;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="top-nav">
+    <div class="wrapper nav-inner">
+      <div class="logo">
+        <span class="logo-badge">爱</span>
+        爱情岛
+      </div>
+      <nav class="nav-links">
+        <a href="/#featured">热门推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deepdive">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 首屏 Banner -->
+  <section class="hero">
+    <div class="wrapper hero-content">
+      <div class="hero-text">
+        <h1>爱情岛 <span>恋爱综艺与情感观察</span></h1>
+        <p class="hero-desc">发现值得追的恋爱真人秀、情感观察节目和甜蜜互动名场面。从心动信号到关系走向，这里汇总了观众最关心的内容与讨论。</p>
+        <div class="search-box">
+          <input type="text" placeholder="搜索节目、嘉宾或名场面...">
+          <button>搜索</button>
+        </div>
+        <div class="hero-tags">
+          <a href="/#featured">恋综推荐</a>
+          <a href="/#updates">今日更新</a>
+          <a href="/#categories">心动名场面</a>
+          <a href="/#deepdive">关系分析</a>
+          <a href="/#comments">观众讨论</a>
+          <a href="/#news">节目资讯</a>
+          <a href="/#faq">新手指南</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="island-graphic"><span>❤</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门内容推荐 -->
+  <section class="section" id="featured">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2>热门恋爱综艺推荐</h2>
+        <a href="/#featured" class="more-link">查看全部 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="rec-card">
+          <span class="card-tag">热播中</span>
+          <h3>心动小屋·第四季</h3>
+          <p>六位素人嘉宾入住海边小屋，在浪漫氛围中寻找真爱。本季新增匿名短信环节，关系走向更加扑朔迷离。</p>
+          <div class="card-meta"><span>热度 9.2</span><span>更新至第8期</span></div>
+        </article>
+        <article class="rec-card">
+          <span class="card-tag">高口碑</span>
+          <h3>恋爱观察室</h3>
+          <p>明星观察团与心理学专家共同解读素人恋爱细节。每一帧微表情都可能是关键线索，适合喜欢分析的观众。</p>
+          <div class="card-meta"><span>热度 8.8</span><span>已完结</span></div>
+        </article>
+        <article class="rec-card">
+          <span class="card-tag">新上线</span>
+          <h3>海岛之恋</h3>
+          <p>八位单身男女在孤岛上共度21天，生存挑战与心动选择同时进行。残酷规则下诞生的感情更显真实。</p>
+          <div class="card-meta"><span>热度 8.5</span><span>更新至第3期</span></div>
+        </article>
+        <article class="rec-card">
+          <span class="card-tag">经典回顾</span>
+          <h3>爱情岛·第一季</h3>
+          <p>开山之作，奠定了恋爱综艺的经典模式。回顾最初的心动瞬间，很多观众从这里开始入坑。</p>
+          <div class="card-meta"><span>热度 8.0</span><span>全12期</span></div>
+        </article>
+        <article class="rec-card">
+          <span class="card-tag">话题度高</span>
+          <h3>换乘恋爱·特别篇</h3>
+          <p>分手情侣再聚首，在复杂情绪中重新选择。真实感人的情感拉扯，每一集都有让人泪目的瞬间。</p>
+          <div class="card-meta"><span>热度 9.0</span><span>更新至第6期</span></div>
+        </article>
+        <article class="rec-card">
+          <span class="card-tag">治愈系</span>
+          <h3>慢慢喜欢你</h3>
+          <p>慢节奏恋爱观察节目，没有强冲突和剧本感，适合喜欢温润日常的观众。看完会重新相信爱情。</p>
+          <div class="card-meta"><span>热度 8.3</span><span>全10期</span></div>
+        </article>
+        <article class="rec-card">
+          <span class="card-tag">明星嘉宾</span>
+          <h3>爱的修学旅行</h3>
+          <p>明星夫妻与情侣共同旅行，在旅途中重新发现彼此。真实互动与风景大片兼得，轻松下饭。</p>
+          <div class="card-meta"><span>热度 8.7</span><span>更新至第5期</span></div>
+        </article>
+        <article class="rec-card">
+          <span class="card-tag">素人恋爱</span>
+          <h3>心动的信号·海边季</h3>
+          <p>全新海边场景，信号小屋升级。本季嘉宾职业更加多元，不同背景下的爱情观碰撞成为看点。</p>
+          <div class="card-meta"><span>热度 8.9</span><span>更新至第7期</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 -->
+  <section class="section" id="updates">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2>最新更新与热播动态</h2>
+        <a href="/#updates" class="more-link">更多更新 →</a>
+      </div>
+      <div class="update-list">
+        <div class="update-item"><span class="time-badge">今天 10:23</span><span class="update-title">心动小屋·第四季</span><span class="update-desc">第8期已上线：匿名短信环节引发巨大反转，两位嘉宾关系出现裂痕。</span></div>
+        <div class="update-item"><span class="time-badge">今天 09:15</span><span class="update-title">海岛之恋</span><span class="update-desc">第3期预告：生存挑战升级，新嘉宾空降海岛，现有关系面临冲击。</span></div>
+        <div class="update-item"><span class="time-badge">昨天 20:00</span><span class="update-title">换乘恋爱·特别篇</span><span class="update-desc">第6期上线：X约会选择公开，演播室嘉宾集体落泪。</span></div>
+        <div class="update-item"><span class="time-badge">昨天 18:30</span><span class="update-title">爱情岛·第一季</span><span class="update-desc">经典回顾特辑更新：主创访谈揭秘当年拍摄幕后故事。</span></div>
+        <div class="update-item"><span class="time-badge">11月5日</span><span class="update-title">爱的修学旅行</span><span class="update-desc">第5期已更新：夫妻默契考验环节笑点密集，收视同时段第一。</span></div>
+        <div class="update-item"><span class="time-badge">11月5日</span><span class="update-title">心动的信号·海边季</span><span class="update-desc">第7期上线：海边告白之夜，两对CP确认心意。</span></div>
+        <div class="update-item"><span class="time-badge">11月4日</span><span class="update-title">恋爱观察室</span><span class="update-desc">完结篇上线：观察团最终预测结果揭晓，命中率仅五成。</span></div>
+        <div class="update-item"><span class="time-badge">11月3日</span><span class="update-title">慢慢喜欢你</span><span class="update-desc">全10期已完结，平台放出未播彩蛋片段，甜蜜加倍。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="section" id="categories">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2>按类型浏览</h2>
+      </div>
+      <div class="cat-grid">
+        <a href="/#featured" class="cat-item">素人恋爱</a>
+        <a href="/#featured" class="cat-item">明星情感</a>
+        <a href="/#featured" class="cat-item">观察推理</a>
+        <a href="/#featured" class="cat-item">海岛生存</a>
+        <a href="/#featured" class="cat-item">分手复合</a>
+        <a href="/#featured" class="cat-item">旅行恋爱</a>
+        <a href="/#featured" class="cat-item">慢综艺</a>
+        <a href="/#featured" class="cat-item">高甜名场面</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析 -->
+  <section class="section" id="deepdive">
+    <div class="wrapper">
+      <div class="deep-dive">
+        <h2>深度解析：爱情岛类节目为什么让人上头</h2>
+        <p>“爱情岛”最初是一档英国恋爱真人秀的名字，如今在国内观众语境中，已经演变为恋爱综艺与情感观察类节目的代名词。从《心动小屋》到《换乘恋爱》，从素人恋爱到明星夫妻观察，这类节目持续占据着视频平台的热门榜单。那么，爱情岛类节目到底有什么魅力，让观众一边吐槽一边追更？</p>
+        <h3>真实与剧本之间的微妙平衡</h3>
+        <p>恋爱综艺最大的看点在于“真实感”。素人嘉宾不是专业演员，他们的紧张、尴尬、心动和犹豫都很难完全伪装。但另一方面，节目组通过规则设置、剪辑节奏和场景安排，又确实在引导叙事走向。观众乐此不疲地分析哪些是真情流露，哪些是剧本痕迹，这种参与感本身就是内容消费的一部分。爱情岛类节目之所以能持续产出话题，正是因为它在真实与设计之间找到了一个让观众愿意相信的平衡点。</p>
+        <h3>情感观察的社交货币属性</h3>
+        <p>看恋爱综艺从来不是一个人的事。弹幕、评论区、社交平台上的CP粉与唯粉大战，构成了完整的观看体验。观众在讨论“谁和谁更配”“某某是不是海王”的过程中，完成了社交互动。爱情岛这个关键词之所以搜索量居高不下，很大程度上是因为每一期更新后，都有大量观众需要找到同好交流观点。本页面汇集的热门节目和用户评论，正是为这种讨论需求提供参考。</p>
+        <h3>不同类型节目的差异化路线</h3>
+        <p>目前市面上的爱情岛类节目大致分为几个方向：一是以《心动小屋》《心动的信号》为代表的素人恋爱观察，主打真实感和素人成长；二是以《换乘恋爱》为代表的分手复合题材，情感浓度极高，话题性强；三是以《爱的修学旅行》为代表的明星夫妻旅行观察，轻松治愈；四是以《海岛之恋》为代表的生存挑战型恋爱，规则残酷、戏剧冲突强烈。不同观众可以根据自己的偏好选择，喜欢甜宠的看素人恋爱，喜欢抓马的看换乘复合，喜欢下饭的看明星旅行。</p>
+        <h3>搜索“爱情岛”时观众到底想找什么</h3>
+        <p>从搜索行为来看，用户搜索“爱情岛”通常有几种典型意图：寻找在线观看渠道、查看最新一期更新内容、了解嘉宾背景和关系走向、寻找同类节目推荐、阅读观众评价和讨论。本页面围绕这些需求，提供了热门推荐、更新动态、分类入口、深度解析和用户评论等内容，无论你是刚入坑的新观众还是追过多季的老粉，都能找到有价值的参考。</p>
+        <h3>值得关注的趋势</h3>
+        <p>随着恋爱综艺市场竞争加剧，节目制作方在场景、规则和嘉宾选择上不断推陈出新。海边小屋、孤岛生存、前任重逢、素人职业多元化等元素持续迭代。对于观众来说，这意味着更多选择，也意味着需要更高效的筛选方式。爱情岛专题页的价值就在于把分散的信息聚合起来，帮助观众快速判断哪些节目值得投入时间。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">爱情岛类节目应该从哪里开始看？</div>
+          <div class="faq-a">如果是第一次接触恋爱综艺，建议从《心动小屋》第一季或《慢慢喜欢你》开始，节奏温和、规则简单，容易建立对节目模式的理解。喜欢强情节和反转的观众可以直接看《换乘恋爱》特别篇，情感浓度高、话题性强。选择时也可以参考本页热门推荐中的标签和简介，按自己偏好的类型切入。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">恋爱综艺里的感情是真实的吗？</div>
+          <div class="faq-a">大多数节目会强调素人嘉宾的真实性，但不可否认节目规则、剪辑和场景设计都会影响呈现效果。观众可以关注节目外的嘉宾互动、社交动态和后续发展，这些往往比正片更能反映真实关系。恋爱综艺的魅力之一就是真实与叙事之间的模糊地带，不必过于纠结真假，享受观看过程即可。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">有哪些类似爱情岛的节目推荐？</div>
+          <div class="faq-a">如果喜欢素人恋爱观察，可以看《心动的信号》系列、《心动小屋》系列；喜欢分手复合题材的推荐《换乘恋爱》；喜欢明星夫妻互动可以看《爱的修学旅行》；偏爱生存挑战和戏剧冲突的话，《海岛之恋》是不错的选择。本页分类入口和推荐卡片中都有对应链接，方便按类型浏览。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">爱情岛节目一般多久更新一期？</div>
+          <div class="faq-a">国内恋爱综艺通常采用周播模式，每周更新一期正片，部分节目会附带会员加更或花絮内容。更新日多集中在周五至周日。本页“最新更新”栏目会持续追踪各热门节目的更新动态，包括上线时间、期数和内容摘要，适合追更观众收藏关注。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">看恋爱综艺适合什么人群？</div>
+          <div class="faq-a">恋爱综艺受众非常广泛。喜欢情感分析和人际关系讨论的观众可以从中获得大量谈资；喜欢轻松下饭内容的观众可以找到治愈感；对综艺制作和剪辑叙事感兴趣的观众也能从中观察节目模式。当然，如果你对恋爱话题完全不感兴趣，这类节目可能不太适合。建议先看一集试试，再决定是否追更。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">如何第一时间知道爱情岛类节目的更新和资讯？</div>
+          <div class="faq-a">关注本页“最新更新”和“相关资讯”栏目即可获取近期动态。此外，视频平台的节目官方账号、嘉宾社交动态以及社区讨论区也是重要信息来源。建议将本页加入浏览器收藏夹，每次想找新节目或查看更新进度时快速访问，省去在多个平台之间切换的时间。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评论 -->
+  <section class="section" id="comments">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2>观众都在聊什么</h2>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card"><div class="comment-head"><div class="avatar">桃</div><span class="nickname">桃子汽水</span><span class="comment-date">11月6日</span></div><div class="comment-text">心动小屋第四季第8期真的反转太大了，本来以为稳了的那对居然出现裂痕，编剧都不敢这么写。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">海</div><span class="nickname">海边吹风</span><span class="comment-date">11月5日</span></div><div class="comment-text">海岛之恋的规则太狠了，生存压力下人的真实性格完全暴露，比那些岁月静好的恋综刺激多了。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">柠</div><span class="nickname">柠檬不酸</span><span class="comment-date">11月5日</span></div><div class="comment-text">换乘恋爱特别篇第6期哭死我了，X约会那段真的能感受到那种复杂的心情，节目组太会了。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">慢</div><span class="nickname">慢慢来</span><span class="comment-date">11月4日</span></div><div class="comment-text">推荐《慢慢喜欢你》，没有狗血没有撕逼，就是安安静静看别人谈恋爱，看完心情很好。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">观</div><span class="nickname">观察员小张</span><span class="comment-date">11月3日</span></div><div class="comment-text">恋爱观察室的心理学分析其实挺有用的，学了不少微表情知识，虽然不知道在实际生活中有没有用。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">心</div><span class="nickname">心动第一季老粉</span><span class="comment-date">11月2日</span></div><div class="comment-text">还是觉得第一季最好看，那时候没有太多套路，嘉宾也比较真实。后面几季越来越精致但少了点味道。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">修</div><span class="nickname">修学旅行团</span><span class="comment-date">11月1日</span></div><div class="comment-text">爱的修学旅行真的可以当旅游节目看，取景太美了，夫妻互动也很自然，下饭首选。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">分</div><span class="nickname">分手快乐</span><span class="comment-date">10月30日</span></div><div class="comment-text">换乘恋爱看完只觉得感情太复杂了，有时候错过就是错过，节目里能重新选择的人其实很幸运。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">海</div><span class="nickname">海边季入坑</span><span class="comment-date">10月29日</span></div><div class="comment-text">心动的信号海边季比前几季好看，场景换了之后氛围完全不一样，嘉宾质量也很高。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">吐</div><span class="nickname">吐槽役</span><span class="comment-date">10月27日</span></div><div class="comment-text">说实话有些恋综剧本感太强了，嘉宾像在演偶像剧，反而失去了真实的吸引力。希望多来点真诚的节目。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">甜</div><span class="nickname">甜度超标</span><span class="comment-date">10月25日</span></div><div class="comment-text">海岛之恋里那对确认心意的片段我反复看了五遍，真的好甜，希望节目外也能继续发展。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">路</div><span class="nickname">路人观众</span><span class="comment-date">10月23日</span></div><div class="comment-text">第一次看恋综，感觉这种节目挺适合和朋友一起看一起讨论的，比一个人刷剧有意思多了。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">资</div><span class="nickname">资深嗑学家</span><span class="comment-date">10月20日</span></div><div class="comment-text">从爱情岛第一季追到现在，见证了恋综从简单到复杂的演变。现在节目越来越多，反而需要这样的专题页来帮忙筛选。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">冷</div><span class="nickname">冷静分析</span><span class="comment-date">10月18日</span></div><div class="comment-text">其实恋综看多了会发现模式都差不多，真正拉开差距的是嘉宾的个人魅力和节目组的剪辑水准。</div></div>
+        <div class="comment-card"><div class="comment-head"><div class="avatar">新</div><span class="nickname">新人求带</span><span class="comment-date">10月16日</span></div><div class="comment-text">想问一下大家，如果只看一档恋综的话推荐哪个？时间有限不想全部追，想挑最好看的。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="section" id="news">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2>相关资讯</h2>
+      </div>
+      <div class="news-grid">
+        <article class="news-card"><div class="news-date">2026年11月7日</div><h3>心动小屋第四季收视创新高，匿名短信环节成话题焦点</h3><p>最新一期节目上线后迅速登上平台热搜榜，观众对匿名短信环节的设计讨论热烈，相关话题阅读量突破三亿。</p></article>
+        <article class="news-card"><div class="news-date">2026年11月6日</div><h3>海岛之恋新嘉宾空降，现有CP关系面临大洗牌</h3><p>节目组确认新一期将有两位新嘉宾加入，预告片显示现有配对将受到冲击，观众期待值拉满。</p></article>
+        <article class="news-card"><div class="news-date">2026年11月4日</div><h3>换乘恋爱特别篇完结在即，最终选择结果引发全网竞猜</h3><p>节目接近尾声，观众对最终CP配对展开激烈讨论，多个预测版本在社交平台流传。</p></article>
+        <article class="news-card"><div class="news-date">2026年11月2日</div><h3>恋爱观察室收官，观察团预测命中率成热议话题</h3><p>节目完结后，观察团对素人关系的预测准确率仅五成，引发观众对情感分析有效性的讨论。</p></article>
+        <article class="news-card"><div class="news-date">2026年10月30日</div><h3>爱的修学旅行取景地成旅游热点，节目带动当地文旅热度</h3><p>节目拍摄地游客量明显增长，当地文旅部门表示将推出相关主题旅游线路。</p></article>
+        <article class="news-card"><div class="news-date">2026年10月28日</div><h3>爱情岛系列节目模式将推出全新升级版，制作方透露正在筹备</h3><p>据业内人士透露，经典爱情岛模式将迎来全新改编，预计明年上线，具体细节尚未公布。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="wrapper footer-inner">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-badge">爱</span> 爱情岛</div>
+        <p>专注恋爱综艺与情感观察节目推荐，提供热门榜单、深度解析、更新追踪和观众讨论。帮助你快速找到值得追的节目。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <a href="/#featured">热门推荐</a>
+          <a href="/#updates">最新更新</a>
+          <a href="/#categories">分类入口</a>
+          <a href="/#deepdive">深度解析</a>
+        </div>
+        <div class="footer-col">
+          <h4>内容类型</h4>
+          <a href="/#featured">素人恋爱</a>
+          <a href="/#featured">明星情感</a>
+          <a href="/#featured">分手复合</a>
+          <a href="/#featured">旅行恋爱</a>
+        </div>
+        <div class="footer-col">
+          <h4>友情链接</h4>
+          <a href="/#featured">综艺频道</a>
+          <a href="/#featured">真人秀专区</a>
+          <a href="/#featured">情感观察</a>
+          <a href="/#featured">影视推荐</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper footer-bottom">
+      <p>© 2026 爱情岛专题页 · 内容仅供参考 · 免责声明：本页节目信息来源于公开资料，不构成观看建议。</p>
+    </div>
+  </footer>
+</body>
+                                                              </html>
