@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>糖心社区-热门短剧推荐_最新微短剧在线看</title>
+  <meta name="description" content="糖心社区是短剧爱好者聚集地，提供热门短剧推荐、最新微短剧在线看、短剧榜单与深度解析，涵盖甜宠、逆袭、悬疑等类型，帮你快速找到值得追的短剧。">
+  <meta name="keywords" content="糖心社区,短剧推荐,微短剧在线看,短剧榜单,糖心社区短剧">
+  <style>
+    /* ---------- 全局重置与变量 ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f9f7fa;
+      --surface: #ffffff;
+      --surface-soft: #f3eef7;
+      --primary: #b84a8c;
+      --primary-dark: #8e2f6b;
+      --primary-light: #f0d9eb;
+      --text-main: #2e1b2b;
+      --text-soft: #63506b;
+      --text-muted: #998da3;
+      --border: #e5dbe8;
+      --shadow-sm: 0 4px 12px rgba(154, 80, 130, 0.08);
+      --shadow-md: 0 10px 24px rgba(130, 57, 105, 0.12);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --font: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+      --max-width: 1200px;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: var(--font);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- 通用按钮/标签 ---------- */
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .tag--soft {
+      background: var(--surface-soft);
+      color: var(--text-soft);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 12px rgba(184, 74, 140, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--primary-dark);
+      border: 1.5px solid var(--primary);
+      box-shadow: none;
+    }
+
+    .btn--outline:hover {
+      background: var(--primary-light);
+    }
+
+    /* ---------- 卡片 ---------- */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ---------- 头部导航 ---------- */
+    .site-header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), #db8bc0);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 4px 4px 4px 18px;
+      min-width: 220px;
+    }
+
+    .header-search input {
+      border: none;
+      background: transparent;
+      padding: 8px 0;
+      font-size: 0.85rem;
+      outline: none;
+      width: 100%;
+      color: var(--text-main);
+    }
+
+    .header-search input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .header-search button {
+      background: var(--primary-light);
+      border: none;
+      border-radius: 30px;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .header-search button:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* ---------- Banner ---------- */
+    .banner {
+      background: linear-gradient(120deg, #fdf3fa 0%, #f7e9f2 100%);
+      border-radius: 0 0 40px 40px;
+      padding: 48px 0 56px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .banner-content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 720px;
+    }
+
+    .banner h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .banner h1 span {
+      color: var(--primary-dark);
+      background: linear-gradient(to right, var(--primary), #d47ab3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .banner-desc {
+      font-size: 1.1rem;
+      color: var(--text-soft);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .banner-search {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 60px;
+      padding: 6px 6px 6px 24px;
+      box-shadow: var(--shadow-sm);
+      max-width: 460px;
+      border: 1px solid var(--border);
+    }
+
+    .banner-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 12px 0;
+      background: transparent;
+    }
+
+    .banner-search .btn {
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+    }
+
+    .banner-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .banner-nav a {
+      background: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-sm);
+      transition: background 0.2s, color 0.2s;
+      border: 1px solid var(--border);
+    }
+
+    .banner-nav a:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* ---------- 通用区块 ---------- */
+    .section {
+      margin-bottom: 56px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+    }
+
+    .section-title small {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-left: 12px;
+    }
+
+    .section-more {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .section-more:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- 热门推荐卡片网格 ---------- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .drama-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .drama-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .drama-poster {
+      height: 140px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #f0d9eb, #dab8d0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      box-shadow: inset 0 -4px 12px rgba(0,0,0,0.02);
+      text-align: center;
+      padding: 12px;
+      line-height: 1.3;
+    }
+
+    .drama-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .drama-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .drama-desc {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .drama-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      margin-top: auto;
+    }
+
+    /* ---------- 最新更新列表 ---------- */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .update-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-item:hover {
+      background: var(--surface-soft);
+    }
+
+    .update-time {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      min-width: 65px;
+      background: var(--primary-light);
+      padding: 4px 8px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .update-name {
+      font-weight: 600;
+      font-size: 1rem;
+      min-width: 180px;
+    }
+
+    .update-summary {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      flex: 1;
+    }
+
+    /* ---------- 分类入口 ---------- */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    .category-item {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 18px 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-sm);
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+      border: 1px solid var(--border);
+    }
+
+    .category-item:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .category-item span {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ---------- 深度解析正文 ---------- */
+    .article-body {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      box-shadow: var(--shadow-sm);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-soft);
+    }
+
+    .article-body h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .article-body p {
+      margin-bottom: 20px;
+    }
+
+    .article-body strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* ---------- 体验指南卡片 ---------- */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .guide-card {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--primary);
+    }
+
+    .guide-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .guide-card p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--text-main);
+      display: flex;
+      gap: 10px;
+    }
+
+    .faq-q::before {
+      content: "Q";
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      padding-left: 24px;
+    }
+
+    /* ---------- 评论 ---------- */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comment-item {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 16px;
+    }
+
+    .comment-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), #e2c6d8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    .comment-content {
+      flex: 1;
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .comment-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .comment-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .comment-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    /* ---------- 资讯卡片 ---------- */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .news-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .news-summary {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    /* ---------- 页脚 ---------- */
+    .site-footer {
+      background: #2e1b2b;
+      color: #d9c9d6;
+      padding: 48px 0 24px;
+      margin-top: 40px;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand .logo {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: #b59aaf;
+      margin-bottom: 6px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: #b59aaf;
+      margin-bottom: 8px;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #4a3446;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #8f758a;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 900px) {
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .banner {
+        padding: 32px 0 40px;
+        border-radius: 0 0 24px 24px;
+      }
+
+      .banner h1 {
+        font-size: 2rem;
+      }
+
+      .banner-desc {
+        font-size: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .header-search {
+        min-width: 160px;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-body {
+        padding: 24px 20px;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .update-item {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .update-name {
+        min-width: 120px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .banner h1 {
+        font-size: 1.6rem;
+      }
+
+      .banner-nav a {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">糖</span>
+        糖心社区
+      </a>
+      <nav class="nav-links">
+        <a href="/#hot-dramas">热门短剧</a>
+        <a href="/#latest-updates">最新更新</a>
+        <a href="/#categories">分类</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">评论</a>
+      </nav>
+      <div class="header-search">
+        <input type="text" placeholder="搜短剧、演员、类型...">
+        <button>搜索</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="container">
+      <div class="banner-content">
+        <h1><span>糖心社区</span><br>短剧迷的每日追更站</h1>
+        <p class="banner-desc">甜宠、逆袭、悬疑、古装……最新微短剧在线看，热门短剧榜单每日更新，深度解析帮你找到对味的那一部。来糖心社区，和十万剧友一起追更不剧荒。</p>
+        <div class="banner-search">
+          <input type="text" placeholder="输入剧名或关键词，发现好剧">
+          <button class="btn">找短剧</button>
+        </div>
+        <div class="banner-nav">
+          <a href="/#hot-dramas">🔥 热门短剧</a>
+          <a href="/#latest-updates">🆕 今日更新</a>
+          <a href="/#categories">甜宠专区</a>
+          <a href="/#categories">逆袭爽剧</a>
+          <a href="/#categories">悬疑烧脑</a>
+          <a href="/#deep-dive">深度解析</a>
+          <a href="/#faq">新手指南</a>
+          <a href="/#comments">剧友讨论</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- 热门推荐 -->
+    <section id="hot-dramas" class="section">
+      <div class="section-header">
+        <h2 class="section-title">🔥 热门短剧推荐 <small>本周剧友都在追</small></h2>
+        <a href="/#hot-dramas" class="section-more">查看全部 →</a>
+      </div>
+      <div class="card-grid">
+        <div class="drama-card">
+          <div class="drama-poster">闪婚后，大叔每天狂宠我</div>
+          <h3>闪婚后，大叔每天狂宠我</h3>
+          <div class="drama-meta">
+            <span class="tag">甜宠</span>
+            <span class="tag tag--soft">先婚后爱</span>
+            <span class="tag tag--soft">大叔萝莉</span>
+          </div>
+          <p class="drama-desc">一场乌龙闪婚，小白兔女主撞上冷面霸总，婚后天天被宠到腿软。糖分超标，一口气刷完八集不费劲。</p>
+          <div class="drama-stats"><span>🔥 热度 98.2万</span><span>共 24 集</span></div>
+        </div>
+        <div class="drama-card">
+          <div class="drama-poster">重生之逆袭千金</div>
+          <h3>重生之逆袭千金</h3>
+          <div class="drama-meta">
+            <span class="tag">逆袭</span>
+            <span class="tag tag--soft">重生</span>
+            <span class="tag tag--soft">豪门</span>
+          </div>
+          <p class="drama-desc">被陷害致死的豪门千金重回十八岁，撕绿茶、斗继母、搞事业，顺便把高冷总裁收入囊中。爽点密集，每集不到两分钟。</p>
+          <div class="drama-stats"><span>🔥 热度 88.6万</span><span>共 30 集</span></div>
+        </div>
+        <div class="drama-card">
+          <div class="drama-poster">藏在暗处的她</div>
+          <h3>藏在暗处的她</h3>
+          <div class="drama-meta">
+            <span class="tag">悬疑</span>
+            <span class="tag tag--soft">心理</span>
+            <span class="tag tag--soft">反转</span>
+          </div>
+          <p class="drama-desc">一场车祸后，女主发现自己能看见别人看不到的东西。每集一个细思极恐的反转，看到最后一秒才敢喘气。</p>
+          <div class="drama-stats"><span>🔥 热度 76.3万</span><span>共 18 集</span></div>
+        </div>
+        <div class="drama-card">
+          <div class="drama-poster">太子妃她每天都在装傻</div>
+          <h3>太子妃她每天都在装傻</h3>
+          <div class="drama-meta">
+            <span class="tag">古装</span>
+            <span class="tag tag--soft">喜剧</span>
+            <span class="tag tag--soft">宫斗</span>
+          </div>
+          <p class="drama-desc">现代社畜穿成太子妃，为了活命天天装疯卖傻，结果太子就吃这一套。又甜又好笑，下饭神剧。</p>
+          <div class="drama-stats"><span>🔥 热度 72.1万</span><span>共 26 集</span></div>
+        </div>
+        <div class="drama-card">
+          <div class="drama-poster">离婚后，前夫跪求复合</div>
+          <h3>离婚后，前夫跪求复合</h3>
+          <div class="drama-meta">
+            <span class="tag">都市</span>
+            <span class="tag tag--soft">虐恋</span>
+            <span class="tag tag--soft">追妻火葬场</span>
+          </div>
+          <p class="drama-desc">忍气吞声三年后女主潇洒离婚，前夫这才发现她的好，开启漫漫追妻路。前期有多虐，后期就有多爽。</p>
+          <div class="drama-stats"><span>🔥 热度 68.9万</span><span>共 28 集</span></div>
+        </div>
+        <div class="drama-card">
+          <div class="drama-poster">我的同桌是校霸</div>
+          <h3>我的同桌是校霸</h3>
+          <div class="drama-meta">
+            <span class="tag">校园</span>
+            <span class="tag tag--soft">青春</span>
+            <span class="tag tag--soft">甜宠</span>
+          </div>
+          <p class="drama-desc">学霸乖乖女和校霸同桌的爆笑日常，从互相嫌弃到双向奔赴。满满的青春气息，看完想谈恋爱。</p>
+          <div class="drama-stats"><span>🔥 热度 61.4万</span><span>共 20 集</span></div>
+        </div>
+        <div class="drama-card">
+          <div class="drama-poster">神医小娇妻</div>
+          <h3>神医小娇妻</h3>
+          <div class="drama-meta">
+            <span class="tag">古装</span>
+            <span class="tag tag--soft">医术</span>
+            <span class="tag tag--soft">甜宠</span>
+          </div>
+          <p class="drama-desc">现代女医生穿越成农家小媳妇，靠医术发家致富，顺便把冷面将军治得服服帖帖。种田+甜宠，越看越上头。</p>
+          <div class="drama-stats"><span>🔥 热度 58.7万</span><span>共 32 集</span></div>
+        </div>
+        <div class="drama-card">
+          <div class="drama-poster">夜色深处的秘密</div>
+          <h3>夜色深处的秘密</h3>
+          <div class="drama-meta">
+            <span class="tag">悬疑</span>
+            <span class="tag tag--soft">犯罪</span>
+            <span class="tag tag--soft">烧脑</span>
+          </div>
+          <p class="drama-desc">一桩十年悬案重新浮出水面，每个看似无关的人都有秘密。节奏紧凑，信息量大，建议开弹幕一起推理。</p>
+          <div class="drama-stats"><span>🔥 热度 54.2万</span><span>共 16 集</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section id="latest-updates" class="section">
+      <div class="section-header">
+        <h2 class="section-title">🆕 最新更新 <small>2026年11月7日 今日动态</small></h2>
+        <a href="/#latest-updates" class="section-more">全部更新 →</a>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-time">今日 20:00</span>
+          <span class="update-name">闪婚后，大叔每天狂宠我</span>
+          <span class="update-summary">第18集已上线，婚后第一次大吵，男主追妻火葬场预警</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今日 18:30</span>
+          <span class="update-name">重生之逆袭千金</span>
+          <span class="update-summary">第22集更新，女主当众揭穿继母阴谋，爽度拉满</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今日 15:00</span>
+          <span class="update-name">藏在暗处的她</span>
+          <span class="update-summary">第12集上线，剧情迎来最大反转，弹幕已炸</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今日 12:00</span>
+          <span class="update-name">太子妃她每天都在装傻</span>
+          <span class="update-summary">第20集更新，太子妃装傻翻车现场，笑到停不下来</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今日 10:00</span>
+          <span class="update-name">离婚后，前夫跪求复合</span>
+          <span class="update-summary">第25集上线，前夫开始卑微追妻，观众直呼解气</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨日 21:00</span>
+          <span class="update-name">我的同桌是校霸</span>
+          <span class="update-summary">第16集更新，校霸为女主打架被处分，双向暗恋太甜了</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨日 19:00</span>
+          <span class="update-name">神医小娇妻</span>
+          <span class="update-summary">第28集上线，女主用现代医术救了将军一命，感情升温</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨日 16:00</span>
+          <span class="update-name">夜色深处的秘密</span>
+          <span class="update-summary">第10集更新，新线索出现，真凶身份更加扑朔迷离</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨日 12:00</span>
+          <span class="update-name">闪婚后，大叔每天狂宠我</span>
+          <span class="update-summary">第17集上线，男主吃醋名场面，糖分超标警告</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨日 09:00</span>
+          <span class="update-name">重生之逆袭千金</span>
+          <span class="update-summary">第21集更新，女主公司上市，打脸所有看不起她的人</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section id="categories" class="section">
+      <div class="section-header">
+        <h2 class="section-title">📂 按口味找剧 <small>8个热门分类</small></h2>
+        <a href="/#categories" class="section-more">全部分类 →</a>
+      </div>
+      <div class="category-grid">
+        <a href="/#categories" class="category-item">甜宠剧<span>高糖预警</span></a>
+        <a href="/#categories" class="category-item">逆袭爽剧<span>打脸解气</span></a>
+        <a href="/#categories" class="category-item">悬疑烧脑<span>反转不断</span></a>
+        <a href="/#categories" class="category-item">古装言情<span>穿越宫斗</span></a>
+        <a href="/#categories" class="category-item">都市情感<span>追妻火葬场</span></a>
+        <a href="/#categories" class="category-item">校园青春<span>同桌CP</span></a>
+        <a href="/#categories" class="category-item">萌宝助攻<span>带娃谈恋爱</span></a>
+        <a href="/#categories" class="category-item">民国风云<span>军阀虐恋</span></a>
+      </div>
+    </section>
+
+    <!-- 深度解析正文 -->
+    <section id="deep-dive" class="section">
+      <div class="section-header">
+        <h2 class="section-title">🔍 深度解析 <small>糖心社区编辑手记</small></h2>
+      </div>
+      <div class="article-body">
+        <h2>糖心社区短剧观察：为什么这些微短剧让人一刷就停不下来？</h2>
+        <p>如果你最近打开短视频平台，十有八九刷到过“闪婚”“重生”“逆袭”这类字眼的短剧片段。<strong>糖心社区</strong>作为短剧爱好者的聚集地，每天都有大量剧友在这里分享新发现的好剧。但面对海量内容，到底哪些值得看？哪些只是噱头？这篇文章就从题材、节奏、表演和消费体验四个维度，聊聊糖心社区里那些真正值得追的短剧。</p>
+        <p><strong>一、题材：精准戳中情绪需求</strong><br>短剧之所以让人上头，核心在于它把情绪价值做到了极致。糖心社区热门榜单上，甜宠、逆袭、悬疑三大类长期霸榜。甜宠剧主打“无脑甜”，比如《闪婚后，大叔每天狂宠我》，剧情不复杂，但每一集都有糖点，适合下班后放松。逆袭剧则主打“爽”，《重生之逆袭千金》让女主带着记忆重来一次，把上一世受的委屈加倍还回去，观众代入感极强。悬疑剧更注重钩子，像《藏在暗处的她》，每集结尾留一个反转，逼着你点下一集。糖心社区的编辑在筛选推荐时，会优先考虑那些情绪点密集但逻辑不崩坏的作品。</p>
+        <p><strong>二、节奏：两分钟一个钩子</strong><br>传统电视剧一集45分钟，短剧一集往往只有1-2分钟。这意味着短剧必须在极短时间内完成铺垫、冲突和爽点释放。糖心社区里口碑好的短剧，普遍能做到“前10秒进主线，30秒一个冲突，结尾留悬念”。《太子妃她每天都在装傻》就是个典型例子，第一集女主穿越、装傻、被太子注意，一气呵成，观众还没反应过来就已经点开了第二集。这种节奏感是短剧的核心竞争力，也是糖心社区在推荐时最看重的指标之一。</p>
+        <p><strong>三、表演与制作：小成本也有亮点</strong><br>很多人对短剧的印象还停留在“粗制滥造”，但糖心社区近期推荐的作品中，不少在表演和制作上已经明显升级。比如《夜色深处的秘密》，虽然是悬疑短剧，但摄影和配乐都相当讲究，几个关键场景的氛围渲染不输长剧。演员方面，很多短剧主演是科班出身的新人，表演自然，不会让人出戏。当然，短剧市场鱼龙混杂，糖心社区的建议是：优先选择有平台认证或剧友评分在8分以上的作品，踩雷概率会低很多。</p>
+        <p><strong>四、适合谁看？怎么选？</strong><br>短剧的受众其实很广。时间碎片化的上班族可以把它当“电子榨菜”，通勤路上刷几集；喜欢甜宠的观众可以从糖心社区的“高糖专区”入手；偏爱烧脑的则建议从悬疑分类里挑评分最高的几部。糖心社区的角色就是帮你过滤噪音——我们不做所有短剧的搬运工，而是通过编辑筛选、用户评分和真实评论，把值得花时间的那部分挑出来。如果你刚接触短剧，不妨从本文推荐的热门卡片里选一部试试，大概率不会失望。</p>
+        <p>最后提醒一句：短剧虽好看，但也要注意用眼休息。糖心社区支持按分类筛选和收藏追更，你可以把感兴趣的剧加入追更列表，每天更新时再来刷。希望每一位剧友都能在这里找到自己的快乐源泉。</p>
+      </div>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">📱 体验指南 <small>在糖心社区怎么逛</small></h2>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h4>结构清晰</h4>
+          <p>导航栏直达热门、更新、分类、深度解析和FAQ，不用到处找入口。</p>
+        </div>
+        <div class="guide-card">
+          <h4>筛选方便</h4>
+          <p>按题材、热度、更新状态快速筛选，几秒钟锁定想看的类型。</p>
+        </div>
+        <div class="guide-card">
+          <h4>移动端友好</h4>
+          <p>手机浏览自动适配，卡片和列表在窄屏下依然好读好点。</p>
+        </div>
+        <div class="guide-card">
+          <h4>追更收藏</h4>
+          <p>看到感兴趣的剧可以加入追更列表，更新动态一目了然。</p>
+        </div>
+        <div class="guide-card">
+          <h4>延伸推荐</h4>
+          <p>每部剧下方都有同类推荐，顺着看下去总能发现新宝藏。</p>
+        </div>
+        <div class="guide-card">
+          <h4>真实评论</h4>
+          <p>评论区聚集了大量剧友的真实反馈，帮你判断值不值得花时间。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="section-header">
+        <h2 class="section-title">❓ 常见问题 <small>剧友常问的6个问题</small></h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q">糖心社区主要收录哪些类型的短剧？</div>
+          <div class="faq-a">糖心社区目前重点覆盖甜宠、逆袭、悬疑、古装、都市情感、校园青春等热门短剧类型。每个分类下都有编辑精选和用户评分，方便你按口味筛选。此外，我们也会定期整理主题片单，比如“先婚后爱合集”“重生爽剧TOP10”，帮助剧友快速找到感兴趣的内容。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">第一次来糖心社区，应该从哪部剧开始看？</div>
+          <div class="faq-a">如果你是甜宠爱好者，推荐从《闪婚后，大叔每天狂宠我》入手，剧情轻松糖分足；喜欢逆袭爽感的可以看《重生之逆袭千金》，节奏快、打脸名场面多；偏爱悬疑烧脑的则建议从《藏在暗处的她》开始。这三部在糖心社区的热度和评分都很靠前，踩雷概率低。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">短剧每集时长大概多久？适合通勤看吗？</div>
+          <div class="faq-a">糖心社区收录的微短剧单集通常在1-3分钟之间，节奏紧凑，非常适合通勤、排队、午休等碎片时间观看。一部20多集的短剧，全部刷完大约也就40-60分钟，相当于一集传统电视剧的长度，但情绪密度更高。建议提前缓存几集，地铁没信号也能看。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">糖心社区的更新频率如何？怎么追更？</div>
+          <div class="faq-a">热门短剧通常每天更新1-2集，部分剧集会在周末加更。你可以在糖心社区将感兴趣的剧加入追更列表，每天打开页面就能在“最新更新”区域看到动态。我们也会在首页突出当日更新剧集，方便剧友第一时间跟上进度。遇到断更的剧，评论区会有剧友互相提醒。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">如何判断一部短剧值不值得追？</div>
+          <div class="faq-a">糖心社区提供三个参考维度：一是编辑评分，满分10分，8分以上通常质量有保障；二是用户评论，看看剧友的真实反馈，特别是关于剧情逻辑和演技的评价；三是热度趋势，持续走高的一般不会太差。另外，建议先看前3集试水，短剧的节奏通常前三集就能判断合不合你口味。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">糖心社区的内容是免费的吗？</div>
+          <div class="faq-a">糖心社区是短剧推荐与信息聚合平台，页面展示的剧集介绍、评分、评论和榜单均可免费浏览。具体剧集的观看渠道和付费方式因发布平台而异，糖心社区会标注每部剧的播放来源，方便你前往对应平台观看。我们不做直接播放，只帮你筛选和推荐值得花时间的好剧。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section id="comments" class="section">
+      <div class="section-header">
+        <h2 class="section-title">💬 剧友热评 <small>最近30天</small></h2>
+        <a href="/#comments" class="section-more">参与讨论 →</a>
+      </div>
+      <div class="comment-list">
+        <div class="comment-item">
+          <div class="comment-avatar">小糖</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">小糖豆</span><span class="comment-date">2026-11-06</span></div>
+            <p class="comment-text">《闪婚后》第17集男主吃醋那段我刷了三遍，太甜了！糖心社区的更新提醒很及时，每天下班第一件事就是来看更新了没。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">追剧</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">追剧不睡觉</span><span class="comment-date">2026-11-05</span></div>
+            <p class="comment-text">重生千金第22集爽到我了，继母终于翻车。不过说实话中间有几集节奏有点拖，希望后面能保持高能。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">悬疑</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">悬疑控阿飞</span><span class="comment-date">2026-11-05</span></div>
+            <p class="comment-text">《藏在暗处的她》第12集那个反转真的没想到，之前猜凶手的全猜错了。糖心社区有没有类似的悬疑短剧推荐？求片荒急救。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">太子</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">太子妃头号粉</span><span class="comment-date">2026-11-04</span></div>
+            <p class="comment-text">装傻太子妃真的下饭，每集都笑出声。女主那种一本正经胡说八道的演技太自然了，糖心社区的分类里古装喜剧太少了，希望多推点。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">路人</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">路过看剧</span><span class="comment-date">2026-11-03</span></div>
+            <p class="comment-text">刚来糖心社区，感觉分类挺清楚的，就是热门剧太多了不知道从哪看起。建议出个新手指南，按类型推荐几部入门剧。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">前夫</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">前夫哥别追了</span><span class="comment-date">2026-11-03</span></div>
+            <p class="comment-text">离婚后前夫跪求复合那部，前面虐得我肝疼，但最近几集追妻火葬场看得太爽了，就该这样！糖心社区热度榜应该再往前排排。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">校霸</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">校霸同桌我本人</span><span class="comment-date">2026-11-02</span></div>
+            <p class="comment-text">校园剧那部挺真实的，校霸也不是那种无脑坏，有自己的故事线。就是更新太慢了，一周才三集，等得好着急。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">神医</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">神医小粉丝</span><span class="comment-date">2026-11-01</span></div>
+            <p class="comment-text">种田+医术+甜宠，这个组合太对我胃口了。女主用现代知识在古代搞事业的部分特别好看，感情线也不拖沓。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">夜猫</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">夜猫子不睡</span><span class="comment-date">2026-10-31</span></div>
+            <p class="comment-text">夜色深处的秘密制作在短剧里算很良心了，配乐有电影感。不过信息量确实大，我经常需要往回拉进度条。建议糖心社区加个剧情解析板块。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">糖分</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">糖分超标警告</span><span class="comment-date">2026-10-30</span></div>
+            <p class="comment-text">闪婚大叔那部太上头了，我本来只想看一集，结果一口气刷了十集。男主那种表面冷冰冰实际宠到骨子里的设定永远吃不腻。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">剧评</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">剧评人老周</span><span class="comment-date">2026-10-29</span></div>
+            <p class="comment-text">客观说，短剧市场同质化还是很严重。糖心社区的编辑推荐比平台算法靠谱一些，至少能看出有人工筛选过。希望多推一些有新意的题材。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">萌新</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">短剧萌新</span><span class="comment-date">2026-10-28</span></div>
+            <p class="comment-text">第一次看短剧就是在糖心社区找的推荐，从甜宠入手完全没门槛。现在每天午休看两集，已经变成习惯了。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">收藏</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">收藏夹吃灰</span><span class="comment-date">2026-10-27</span></div>
+            <p class="comment-text">糖心社区的追更功能很实用，但希望能加个更新推送，有时候忙起来就忘了看到哪集了。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">逆袭</div>
+          <div class="comment-content">
+            <div class="comment-header"><span class="comment-name">逆袭爱好者</span><span class="comment-date">2026-10-26</span></div>
+            <p class="comment-text">重生逆袭类短剧真的解压，看女主大杀四方比喝奶茶还爽。糖心社区有没有类似《重生之逆袭千金》的推荐？已经看完了急需下一部。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">📰 短剧资讯 <small>行业动态与看点</small></h2>
+        <a href="/#latest-updates" class="section-more">更多资讯 →</a>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <span class="news-date">2026-11-06</span>
+          <span class="news-title">短剧市场迎来新一轮备案潮，甜宠题材占比下降</span>
+          <p class="news-summary">最新数据显示，近期备案短剧中悬疑和现实题材比例上升，甜宠仍是主流但增速放缓。糖心社区将跟进上新动态。</p>
+        </div>
+        <div class="news-card">
+          <span class="news-date">2026-11-05</span>
+          <span class="news-title">《闪婚后，大叔每天狂宠我》播放量破亿，成糖心社区周榜冠军</span>
+          <p class="news-summary">该剧凭借高密度糖点和快节奏剧情，在糖心社区热度榜连续一周登顶，评论区讨论量突破两万条。</p>
+        </div>
+        <div class="news-card">
+          <span class="news-date">2026-11-04</span>
+          <span class="news-title">多部古装短剧定档11月，太子妃系列或将推出第二季</span>
+          <p class="news-summary">据制作方透露，《太子妃她每天都在装傻》第二季已进入筹备阶段，原班人马有望回归，糖心社区将持续关注。</p>
+        </div>
+        <div class="news-card">
+          <span class="news-date">2026-11-03</span>
+          <span class="news-title">短剧精品化趋势明显，头部作品单集成本翻倍</span>
+          <p class="news-summary">部分短剧开始启用专业摄影和后期团队，画面质感向长剧靠拢。糖心社区编辑认为这是行业健康发展的信号。</p>
+        </div>
+        <div class="news-card">
+          <span class="news-date">2026-11-02</span>
+          <span class="news-title">悬疑短剧《夜色深处的秘密》收官在即，剧友热议真凶身份</span>
+          <p class="news-summary">该剧还剩最后四集，糖心社区评论区关于真凶的猜测帖已超过五百条，热度持续攀升。</p>
+        </div>
+        <div class="news-card">
+          <span class="news-date">2026-11-01</span>
+          <span class="news-title">糖心社区新增“萌宝助攻”分类，亲子向短剧受关注</span>
+          <p class="news-summary">应剧友要求，糖心社区正式上线萌宝题材分类，收录《天才宝宝》《带娃谈恋爱》等十余部热门短剧。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo"><span class="logo-icon">糖</span>糖心社区</div>
+          <p>短剧爱好者的每日追更站，发现好剧，告别剧荒。</p>
+          <p>本站内容为推荐与信息聚合，不提供直接播放。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <a href="/#hot-dramas">热门短剧</a>
+          <a href="/#latest-updates">最新更新</a>
+          <a href="/#categories">分类找剧</a>
+          <a href="/#deep-dive">深度解析</a>
+        </div>
+        <div class="footer-col">
+          <h4>帮助</h4>
+          <a href="/#faq">常见问题</a>
+          <a href="/#comments">剧友评论</a>
+          <a href="/#latest-updates">追更指南</a>
+          <a href="/#categories">分类说明</a>
+        </div>
+        <div class="footer-col">
+          <h4>友情链接</h4>
+          <a href="#">短剧排行榜</a>
+          <a href="#">微短剧观察</a>
+          <a href="#">剧评人联盟</a>
+          <a href="#">影视素材库</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 糖心社区 · 内容仅供学习交流</span>
+        <span>免责声明：本站不存储任何视频资源，所有剧集信息均来自公开网络。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                                             </html>
